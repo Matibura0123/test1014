@@ -12,9 +12,9 @@
 }
 
 :root {
-  --primary: #06b6d4;
-  --secondary: #0891b2;
-  --accent: #67e8f9;
+  --primary: #ec4899;
+  --secondary: #8b5cf6;
+  --accent: #3b82f6;
 }
 
 body {
@@ -22,43 +22,20 @@ body {
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: white;
-  line-height: 1.6;
 }
 
 header {
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.container {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .section {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: 3rem; /* セクション間のスペース */
+  border-radius: 15px; /* セクションの角を丸く */
   border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px);
-  border-radius: 10px;
-  padding: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 button, .btn {
@@ -69,8 +46,6 @@ button, .btn {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-weight: 600;
-  letter-spacing: 0.05em;
 }
 
 button:hover, .btn:hover {
@@ -88,206 +63,355 @@ a {
   color: var(--accent);
   text-decoration: none;
 }
-
 a:hover {
-    color: white;
+    text-decoration: underline;
 }
 
-/* Utility classes for Tailwind-like spacing, text, etc. */
-.py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
-.px-4 { padding-left: 1rem; padding-right: 1rem; }
-.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
-.mx-auto { margin-left: auto; margin-right: auto; }
-.flex { display: flex; }
-.justify-between { justify-content: space-between; }
-.items-center { align-items: center; }
-.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
-.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-.text-2xl { font-size: 1.5rem; line-height: 2rem; }
-.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
-.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-.text-base { font-size: 1rem; line-height: 1.5rem; }
-.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
-.font-bold { font-weight: 700; }
-.font-extrabold { font-weight: 800; }
-.font-semibold { font-weight: 600; }
-.tracking-wider { letter-spacing: 0.05em; }
-.space-x-6 > * + * { margin-left: 1.5rem; }
-.space-y-16 > * + * { margin-top: 4rem; }
-.mb-4 { margin-bottom: 1rem; }
-.mb-6 { margin-bottom: 1.5rem; }
-.mb-8 { margin-bottom: 2rem; }
-.mt-12 { margin-top: 3rem; }
-.px-4 { padding-left: 1rem; padding-right: 1rem; }
-.py-8 { padding-top: 2rem; padding-bottom: 2rem; }
-.py-12 { padding-top: 3rem; padding-bottom: 3rem; }
-.p-6 { padding: 1.5rem; }
-.p-8 { padding: 2rem; }
-.p-12 { padding: 3rem; }
-.rounded-xl { border-radius: 0.75rem; }
-.rounded-lg { border-radius: 0.5rem; }
-.text-center { text-align: center; }
-.leading-relaxed { line-height: 1.625; }
-.grid { display: grid; }
-.gap-8 { gap: 2rem; }
-.items-center { align-items: center; }
-.block { display: block; }
-.bg-gray-900 { background-color: #1a202c; /* Placeholder, will be overridden by rgba */}
-.bg-opacity-30 { background-color: rgba(26, 32, 44, 0.3); /* Custom for footer */}
-.text-gray-200 { color: #e2e8f0; }
+/* Utility classes (Tailwind-like) */
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+.text-center {
+  text-align: center;
+}
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.pt-24 {
+  padding-top: 6rem;
+}
+.pb-4 {
+  padding-bottom: 1rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
+}
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+.mt-8 {
+  margin-top: 2rem;
+}
+.mt-16 {
+  margin-top: 4rem;
+}
+.w-full {
+  width: 100%;
+}
+.hidden {
+  display: none;
+}
+.flex {
+  display: flex;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.items-center {
+  align-items: center;
+}
+.space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  margin-left: 1.5rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-extrabold {
+  font-weight: 800;
+}
+div.card, .card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 2.5rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(var(--accent), 0.1), rgba(var(--secondary), 0.1));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.leading-relaxed {
+  line-height: 1.625;
+}
+.grid {
+  display: grid;
+}
+.gap-8 {
+  gap: 2rem;
+}
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+.rounded-xl {
+    border-radius: 0.75rem;
+}
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.list-disc {
+    list-style-type: disc;
+}
+.list-inside {
+    list-style-position: inside;
+}
+.tracking-wider {
+    letter-spacing: 0.05em;
+}
+.fixed {
+    position: fixed;
+}
+.top-0 {
+    top: 0;
+}
+.z-50 {
+    z-index: 50;
+}
+.relative {
+  position: relative;
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out both;
+}
 
 /* Responsive Design */
 @media (min-width: 768px) {
-  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .md\:p-12 { padding: 3rem; }
+  .md\:block {
+    display: block;
+  }
+  .md\:flex {
+    display: flex;
+  }
+  .md\:hidden {
+    display: none;
+  }
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 
-/* Keyframe Animations */
-@keyframes fade-in {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+footer {
+    background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
 }
-
-@keyframes slide-up {
-  from { opacity: 0; transform: translateY(50px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-in {
-  animation: fade-in 1s ease-out forwards; 
-  opacity: 0; /* Initial state before animation */
-}
-
-.animate-slide-up {
-  animation: slide-up 1s ease-out forwards;
-  opacity: 0;
-  animation-delay: 0.2s;
-}
-
-/* Specific delays for sections (adjust as needed) */
-#intro { animation-delay: 0s; }
-#kyoto { animation-delay: 0.3s; }
-#tokyo { animation-delay: 0.6s; }
-#fuji { animation-delay: 0.9s; }
-#other { animation-delay: 1.2s; }
-
-main section:nth-child(even) .card {
-    transform: rotateY(5deg);
-}
-
-main section:nth-child(odd) .card {
-    transform: rotateY(-5deg);
-}
-
-main section:nth-child(even) .card:hover,
-main section:nth-child(odd) .card:hover {
-    transform: rotateY(0deg) translateY(-5px) scale(1.02);
-}
-
   </style>
 </head>
 <body>
-<header class="py-6 px-4 shadow-lg">
-    <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-3xl font-bold tracking-wider">🇯🇵 日本観光ガイドAI</h1>
-        <nav>
-            <ul class="flex space-x-6">
-                <li><a href="#intro" class="hover:text-accent transition duration-300 ease-in-out text-lg">はじめに</a></li>
-                <li><a href="#kyoto" class="hover:text-accent transition duration-300 ease-in-out text-lg">京都</a></li>
-                <li><a href="#tokyo" class="hover:text-accent transition duration-300 ease-in-out text-lg">東京</a></li>
-                <li><a href="#fuji" class="hover:text-accent transition duration-300 ease-in-out text-lg">富士山</a></li>
-                <li><a href="#other" class="hover:text-accent transition duration-300 ease-in-out text-lg">その他</a></li>
-            </ul>
-        </nav>
-    </div>
+<header class="py-4 px-6 md:px-12 fixed w-full top-0 z-50">
+    <nav class="container mx-auto flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-white tracking-wider">🌈 日本の魅力 🇯🇵</h1>
+        <ul class="hidden md:flex space-x-6">
+            <li><a href="#intro" class="text-white hover:text-var(--accent) transition-colors text-lg">はじめに</a></li>
+            <li><a href="#kyoto" class="text-white hover:text-var(--accent) transition-colors text-lg">京都</a></li>
+            <li><a href="#themepark" class="text-white hover:text-var(--accent) transition-colors text-lg">テーマパーク</a></li>
+            <li><a href="#hidden-gems" class="text-white hover:text-var(--accent) transition-colors text-lg">隠れた名所</a></li>
+        </ul>
+        <button class="md:hidden text-white text-2xl">☰</button>
+    </nav>
 </header>
 
-<main class="container mx-auto px-4 py-12 space-y-16">
+<main class="pt-24">
+    <section id="intro" class="section py-16 px-6 md:px-12 text-center">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 animate-fade-in-up">日本の魅力的な観光地 レポート ✨</h2>
+            <p class="text-lg leading-relaxed mb-4">
+                日本は、古き良き伝統と現代文化が織りなす、多様な魅力に満ちた国です。AIが提供する一般的な情報だけでなく、訪れる人々の心に深く響くであろう、特に人気があり、有名で、かつ一日中楽しめるテーマパークや、あまり知られていない隠れた名所についてご紹介します。
+            </p>
+            <p class="text-lg leading-relaxed">
+                東京や大阪以外の地域に焦点を当てることで、日本の奥深い魅力を再発見できるでしょう。
+            </p>
+        </div>
+    </a></section>
 
-    <section id="intro" class="section p-8 md:p-12 rounded-xl shadow-2xl animate-fade-in">
-        <h2 class="text-4xl font-extrabold mb-6 text-center">日本の観光名所について 🌸</h2>
-        <p class="text-lg leading-relaxed text-center">
-            日本はその多様な文化、歴史、自然の美しさによって、世界中の人々を魅了する観光地です。AIによる情報提供は、数多ある日本の観光地の中から、特に人気があり、記憶に残る場所を選ぶ際に非常に役立ちます。ここでは、旅行者の心に深く響くであろう、日本の代表的な観光名所を紹介します。
-        </p>
-    </section>
-
-    <section id="kyoto" class="section p-8 md:p-12 rounded-xl shadow-2xl animate-slide-up">
-        <h2 class="text-3xl font-bold mb-8 text-center">歴史と文化の都、京都 ⛩️</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <article class="card p-6 rounded-lg shadow-xl">
-                <h3 class="text-2xl font-semibold mb-4">清水寺 🏞️</h3>
-                <p class="text-base leading-relaxed">京都市内を一望できる絶景の舞台造りで知られ、特に秋の紅葉や桜の季節には、その美しさが一層際立ちます。</p>
-            </article>
-            <article class="card p-6 rounded-lg shadow-xl">
-                <h3 class="text-2xl font-semibold mb-4">金閣寺 ✨</h3>
-                <p class="text-base leading-relaxed">そのきらびやかな舎利殿が周囲の庭園と調和し、訪れる人々を静謐な美の世界へと誘います。</p>
-            </article>
-            <article class="card p-6 rounded-lg shadow-xl">
-                <h3 class="text-2xl font-semibold mb-4">伏見稲荷大社 🦊</h3>
-                <p class="text-base leading-relaxed">千本鳥居は、朱色の鳥居が延々と続く幻想的な光景で、多くの観光客がその神秘的な雰囲気に心を奪われます。これらの場所は、日本の伝統的な美意識と歴史を肌で感じることができる、まさに「映える」スポットです。</p>
-            </article>
+    <section id="kyoto" class="section py-16 px-6 md:px-12">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center animate-fade-in-up">🌸 京都の定番観光地 🌸</h2>
+            <p class="text-lg leading-relaxed mb-8 text-center">
+                まずは、定番中の定番でありながら、何度訪れても新しい発見がある、京都の観光地についてです。
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold mb-4">1 伏見稲荷大社 ⛩️</h3>
+                    <p class="text-base leading-relaxed mb-4">
+                        朱色の千本鳥居が延々と続く光景は、まさに圧巻です。神聖な雰囲気に包まれながら、鳥居のトンネルをくぐり抜ける体験は、写真映えも抜群で、多くの観光客を魅了し続けています。頂上まで登ると、京都市内を一望できる素晴らしい景色が広がります。
+                    </p>
+                </div>
+                <div class="card p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold mb-4">2 金閣寺（鹿苑寺） 🌟</h3>
+                    <p class="text-base leading-relaxed mb-4">
+                        まばゆいばかりの金箔に覆われた舎利殿が、鏡のように美しい池に映る姿は、息をのむほどの美しさです。特に紅葉の時期や雪化粧をした姿は、格別の趣があります。
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="tokyo" class="section p-8 md:p-12 rounded-xl shadow-2xl animate-slide-up">
-        <h2 class="text-3xl font-bold mb-8 text-center">大都市の魅力、東京 🏙️</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <article class="card p-6 rounded-lg shadow-xl">
-                <h3 class="text-2xl font-semibold mb-4">渋谷スクランブル交差点 🚦</h3>
-                <p class="text-base leading-relaxed">その圧倒的な人の波とネオンきらめく光景が、東京という都市のエネルギーを象徴しています。</p>
-            </article>
-            <article class="card p-6 rounded-lg shadow-xl">
-                <h3 class="text-2xl font-semibold mb-4">東京スカイツリー 🗼</h3>
-                <p class="text-base leading-relaxed">関東平野を一望できる壮大なパノラマが広がり、夜景は特にロマンチックです。</p>
-            </article>
-            <article class="card p-6 rounded-lg shadow-xl">
-                <h3 class="text-2xl font-semibold mb-4">浅草寺 🏮</h3>
-                <p class="text-base leading-relaxed">東京最古のお寺として歴史と伝統を感じさせ、仲見世通りでの食べ歩きや土産物選びも楽しめます。これらの場所は、現代日本の活気と歴史が融合したユニークな体験を提供します。</p>
-            </article>
+    <section id="themepark" class="section py-16 px-6 md:px-12">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center animate-fade-in-up">🎢 一日中楽しめるテーマパーク：富士急ハイランド ⛰️</h2>
+            <p class="text-lg leading-relaxed mb-8 text-center">
+                次に、一日中楽しめるテーマパークとして、山梨県にある富士急ハイランドをご紹介します。
+            </p>
+            <div class="card p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <p class="text-base leading-relaxed mb-4">
+                    富士急ハイランドは、富士山の麓に位置する絶叫系アトラクションが充実したテーマパークです。
+                </p>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li><p class="text-base">FUJIYAMAやドドンパなど、世界レベルの絶叫マシンが多数あり、スリルを求める人々にはたまらない場所です。</p></li>
+                    <li><p class="text-base">アニメキャラクターをテーマにしたエリアや、子供向けの乗り物も充実しており、家族連れでも一日中楽しめます。</p></li>
+                    <li><p class="text-base">富士山を背景にしたロケーションも素晴らしく、写真撮影にも最適です。</p></li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <section id="fuji" class="section p-8 md:p-12 rounded-xl shadow-2xl animate-slide-up">
-        <h2 class="text-3xl font-bold mb-8 text-center">自然の絶景、富士山 🗻</h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <article class="card p-6 rounded-lg shadow-xl ">
-                <h3 class="text-2xl font-semibold mb-4">富士山と河口湖 🛶</h3>
-                <p class="text-base leading-relaxed">日本の象徴である富士山は、その雄大な姿を見るだけでも感動を与えます。特に河口湖からの眺めは、湖面に映る逆さ富士が幻想的で、多くの写真愛好家を魅了します。</p>
-            </article>
-            <article class="card p-6 rounded-lg shadow-xl">
-                <h3 class="text-2xl font-semibold mb-4">富士五湖周辺アクティビティ 🚴</h3>
-                <p class="text-base leading-relaxed">ハイキングやサイクリング、ボート遊びなど、様々なアウトドアアクティビティも楽しめます。春には桜、秋には紅葉と、四季折々の美しい表情を見せてくれます。</p>
-            </article>
+    <section id="hidden-gems" class="section py-16 px-6 md:px-12">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center animate-fade-in-up">💎 隠れた名所：日本の秘宝たち 🗺️</h2>
+            <p class="text-lg leading-relaxed mb-8 text-center">
+                さらに、知名度は低いながらも、その魅力で人々を惹きつける隠れた名所をいくつかご紹介します。
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold mb-4">1 岐阜県 白川郷（しらかわごう） 🏡</h3>
+                    <p class="text-base leading-relaxed mb-4">
+                        合掌造りの家々が立ち並ぶ、日本の原風景が残る世界遺産です。特に冬の雪が積もった景色は、まるで絵本の世界に入り込んだかのようです。都会の喧騒から離れ、静かで穏やかな時間を過ごしたい方には最高の場所です。
+                    </p>
+                </div>
+                <div class="card p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold mb-4">2 広島県 尾道（おのみち） 🐈</h3>
+                    <p class="text-base leading-relaxed mb-4">
+                        坂の街、映画の街として知られる尾道は、趣のある細い路地や、尾道水道を一望できる千光寺公園からの眺めが絶景です。猫が多く、猫好きにはたまらない場所でもあります。レトロな雰囲気の街並みを散策したり、美味しい海鮮料理を味わったりと、ゆったりとした時間を過ごせます。
+                    </p>
+                </div>
+                <div class="card p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold mb-4">3 北海道 小樽（おたる） 🚢</h3>
+                    <p class="text-base leading-relaxed mb-4">
+                        運河クルーズやガラス工芸体験が楽しめる小樽は、ロマンチックな雰囲気が漂う港町です。特に夜景は美しく、多くのカップルを魅了しています。新鮮な海の幸を堪能できる飲食店も多く、グルメな旅を楽しめます。
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="other" class="section p-8 md:p-12 rounded-xl shadow-2xl animate-slide-up">
-        <h2 class="text-3xl font-bold mb-8 text-center">その他の名所 🌍</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-            <article class="card p-6 rounded-lg shadow-xl">
-                <h3 class="text-2xl font-semibold mb-4">広島：原爆ドームと平和記念公園 🕊️</h3>
-                <p class="text-base leading-relaxed">人類の歴史における重要な教訓を伝える場所として、訪れる人々に深い感銘を与えます。</p>
-            </article>
-            <article class="card p-6 rounded-lg shadow-xl">
-                <h3 class="text-2xl font-semibold mb-4">厳島神社：海に浮かぶ大鳥居 🌊</h3>
-                <p class="text-base leading-relaxed">干潮と満潮で異なる表情を見せ、その神秘的な美しさは多くの人々を惹きつけます。</p>
-            </article>
+    <section class="section py-16 px-6 md:px-12 text-center">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 animate-fade-in-up">心に残る日本の旅を 💖</h2>
+            <p class="text-lg leading-relaxed mb-8">
+                これらの場所は、どれも日本の多様な魅力を体験できる素晴らしい観光地です。AIが提供する情報だけでなく、実際に足を運び、五感で日本の美しさ、楽しさ、そして奥深さを感じていただければ幸いです。
+            </p>
+            <p class="text-xl font-semibold leading-relaxed">
+                日本の旅が、皆様にとって忘れられない素晴らしい経験となることを心より願っております。🇯🇵✨
+            </p>
+            <button class="btn mt-8 text-xl font-bold">旅に出よう！✈️</button>
         </div>
     </section>
-
-    <section class="section p-8 md:p-12 rounded-xl shadow-2xl text-center animate-fade-in">
-        <h2 class="text-3xl font-bold mb-6">AIと巡る、忘れられない日本の旅へ 🚀</h2>
-        <p class="text-lg leading-relaxed mb-8">
-            日本の観光名所は、単に美しいだけでなく、それぞれの場所に物語や歴史が込められています。AIの助けを借りてこれらの場所を訪れる計画を立てることで、きっと忘れられない感動的な旅になるでしょう。これらの人気観光地は、日本の多様な魅力を凝縮しており、世界中の旅行者の心に深く刻まれること間違いありません。
-        </p>
-        <button class="btn text-xl font-semibold">AIに次の旅行を相談する！</button>
-    </section>
-
 </main>
 
-<footer class="py-8 px-4 text-center mt-12 bg-gray-900 bg-opacity-30 backdrop-filter backdrop-blur-md">
-    <p class="text-sm text-gray-200">&copy; 2023 日本観光AIガイド. All rights reserved.</p>
+<footer class="py-8 px-6 md:px-12 text-center bg-gradient-to-r from-var(--secondary) to-var(--primary) mt-16">
+    <p class="text-white text-lg">&copy; 2023 日本の魅力的な観光地レポート</p>
 </footer>
 
   <script>
